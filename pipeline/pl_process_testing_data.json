@@ -1,0 +1,33 @@
+{
+	"name": "pl_process_testing_data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute testing transformation data",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/covid/testing_transform/transform_testing_data"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks_covid_cluster",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "processing"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-30T11:44:14Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
